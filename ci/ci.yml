@@ -1,0 +1,40 @@
+# CI workflow (manual install step)
+#
+# GitHub blocks third-party apps from writing to .github/workflows/ without the
+# dedicated "Workflows" permission, so this file lives here. To activate CI:
+#
+#   mkdir -p .github/workflows && git mv ci/ci.yml .github/workflows/ci.yml
+#   git commit -m "ci: enable CI workflow" && git push
+#
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Validate build & compose
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate docker-compose
+        run: docker compose config
+
+      - name: Build image
+        run: docker build -t the-gate-mcp:ci .
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install deps
+        run: npm install --omit=dev
+
+      - name: Syntax check server.js
+        run: node --check server.js
