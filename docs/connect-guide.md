@@ -8,7 +8,7 @@ This guide is for **customers** connecting an MCP-capable client to The Gate.
 
 - Your **API key** (looks like `gate_sk_xxxxxxxx_...`), provided during onboarding.
   > ⚠️ The key is shown **once**. Store it in a secret manager.
-- The MCP endpoint: `https://the-gate-mcp.srv1461270.hstgr.cloud/mcp`
+- The MCP endpoint: `https://the-gate-mcp.example.com/mcp`
 
 ## 2. Add the server to your MCP client
 
@@ -18,7 +18,7 @@ Most clients accept a JSON config. Add:
 {
   "mcpServers": {
     "the-gate": {
-      "url": "https://the-gate-mcp.srv1461270.hstgr.cloud/mcp",
+      "url": "https://the-gate-mcp.example.com/mcp",
       "transport": "streamable-http",
       "headers": { "Authorization": "Bearer gate_sk_xxxxxxxx_..." }
     }
@@ -56,7 +56,7 @@ Replace the token with your key. Restart the client to load it.
 ## 4. Quick health check (optional)
 
 ```bash
-curl -s https://the-gate-mcp.srv1461270.hstgr.cloud/healthz
+curl -s https://the-gate-mcp.example.com/healthz
 # {"status":"ok"}
 ```
 
