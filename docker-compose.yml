@@ -1,0 +1,25 @@
+services:
+  mcp:
+    build: .
+    image: the-gate-mcp:latest
+    container_name: the-gate-mcp
+    restart: unless-stopped
+    environment:
+      - GATE_API_BASE_URL=http://api:8080/api
+      - OPENAPI_URL=http://api:8080/api/openapi.yaml
+      - ALLOW_FALLBACK_TOKEN=0
+      - PORT=3000
+    ports:
+      - "8082:3000"
+    networks:
+      - the-gate-net
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=the-gate-net
+      - traefik.http.routers.thegatemcp.entrypoints=websecure
+      - "traefik.http.routers.thegatemcp.rule=Host(`the-gate-mcp.srv1461270.hstgr.cloud`)"
+      - traefik.http.routers.thegatemcp.tls.certresolver=letsencrypt
+      - traefik.http.services.thegatemcp.loadbalancer.server.port=3000
+networks:
+  the-gate-net:
+    external: true
