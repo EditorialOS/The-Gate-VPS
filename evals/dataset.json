@@ -1,0 +1,38 @@
+[
+  {
+    "id": "welcome-strong",
+    "brief": "One-line homepage welcome for See Monterey. Warm, specific, under 15 words.",
+    "draft": "Welcome to Monterey — where sea otters, cypress cliffs, and Pacific sunsets meet.",
+    "expect_pass": true
+  },
+  {
+    "id": "welcome-weak",
+    "brief": "One-line homepage welcome for See Monterey. Warm, specific, under 15 words.",
+    "draft": "Welcome.",
+    "expect_pass": false
+  },
+  {
+    "id": "cta-strong",
+    "brief": "Write a call-to-action for booking a whale-watching tour. Action-oriented, <12 words.",
+    "draft": "Book your whale-watching tour today — gray whales are breaching now.",
+    "expect_pass": true
+  },
+  {
+    "id": "cta-offbrief",
+    "brief": "Write a call-to-action for booking a whale-watching tour. Action-oriented, <12 words.",
+    "draft": "Monterey has a nice aquarium and some restaurants downtown.",
+    "expect_pass": false
+  },
+  {
+    "id": "intro-strong",
+    "brief": "Two-sentence intro for a guide to Monterey tide pools. Informative and inviting.",
+    "draft": "Monterey's tide pools brim with sea stars, anemones, and hermit crabs at low tide. Time your visit with the tide charts and step into a living classroom at the water's edge.",
+    "expect_pass": true
+  },
+  {
+    "id": "intro-inaccurate",
+    "brief": "Two-sentence intro for a guide to Monterey tide pools. Informative and inviting.",
+    "draft": "Monterey's tide pools are full of tropical coral reefs and clownfish year-round.",
+    "expect_pass": false
+  }
+]
