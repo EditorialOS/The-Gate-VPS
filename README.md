@@ -51,12 +51,12 @@ eval system in production, with an agent using it, and a PRD."
 
 See [`EVALS.md`](./EVALS.md) for the scoring model.
 
-## Live service
+## Deployment
 
 | | |
 |---|---|
-| **MCP endpoint** | `https://the-gate-mcp.srv1461270.hstgr.cloud/mcp` |
-| **Health** | `https://the-gate-mcp.srv1461270.hstgr.cloud/healthz` |
+| **MCP endpoint** | `https://the-gate-mcp.example.com/mcp` |
+| **Health** | `https://the-gate-mcp.example.com/healthz` |
 | **Transport** | MCP Streamable-HTTP (stateless, multi-tenant) |
 | **TLS** | Let's Encrypt (auto-issued via Traefik) |
 
@@ -65,7 +65,7 @@ See [`EVALS.md`](./EVALS.md) for the scoring model.
 ```bash
 cd examples/agent
 npm install
-export GATE_MCP_URL="https://the-gate-mcp.srv1461270.hstgr.cloud/mcp"
+export GATE_MCP_URL="https://the-gate-mcp.example.com/mcp"
 export GATE_API_KEY="gate_sk_xxxxxxxx_..."   # your key
 node agent.mjs
 ```
@@ -74,7 +74,7 @@ node agent.mjs
 
 ```bash
 cd evals
-export GATE_MCP_URL="https://the-gate-mcp.srv1461270.hstgr.cloud/mcp"
+export GATE_MCP_URL="https://the-gate-mcp.example.com/mcp"
 export GATE_API_KEY="gate_sk_xxxxxxxx_..."
 node run-evals.mjs        # prints a pass-rate report vs expected verdicts
 ```
