@@ -7,27 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2026-07-06
+## [1.1.0] - 2026-07-06
 
 ### Added
-- Initial production release of **The Gate MCP** — a multi-tenant Model Context
-  Protocol (MCP) server that wraps The Gate REST API over HTTPS.
-- Auto-generating tool layer: parses `openapi.yaml` on startup and registers one
-  MCP tool per API operation (`runGate`, `listReviews`, `getReview`).
-- Per-request multi-tenancy: forwards each client's `Authorization: Bearer` token
-  to the API so the API's per-key tenant isolation applies. No shared token baked in.
-- Streamable-HTTP transport (stateless), request-scoped MCP server per token.
-- Dockerfile + docker-compose with Traefik labels for automatic Let's Encrypt TLS.
-- `provision-customer.sh` — one-command customer onboarding that mints a key via
-  the API (never raw SQL) and prints a ready-to-paste client config.
-- `RUNBOOK.md` — full operations runbook (topology, ops, onboarding, verification,
-  troubleshooting).
-- CI workflow validating the Docker build and compose config on every push.
-- Automated VPS → GitHub sync workflow (see README).
+- **Repositioned as an evals framework** — README + PRD now lead with the
+  content-evaluation/scoring model and agent-tool framing.
+- **`EVALS.md`** — documents the scoring rubric: dimensions, weights, and verdict thresholds.
+- **`examples/agent/`** — an autonomous draft → evaluate → revise-on-fail → re-evaluate
+  agent that uses The Gate as an MCP tool (optional Anthropic-backed revision).
+- **`evals/`** — a scored regression harness: labeled dataset + runner that reports
+  a gate-vs-label agreement pass-rate and fails below a threshold (CI-friendly).
 
-### Security
-- Admin secret is read at runtime from the API container and never printed or stored.
-- `.gitignore` excludes `.env`, keys, and secrets.
+### Changed
+- README restructured around a 30-second tour (evals/, examples/agent/, docs/PRD.md).
 
-[Unreleased]: https://github.com/EditorialOS/The-Gate-VPS/compare/v1.0.0...HEAD
+## [1.0.0] - 2026-06-15
+
+### Added
+- Initial production release of **The Gate MCP** — a multi-tenant MCP server
+  wrapping The Gate REST API over HTTPS.
+- Auto-generating tool layer (one MCP tool per OpenAPI operation).
+- Per-request multi-tenancy (forwards each client's bearer token).
+- Streamable-HTTP transport, Docker + Traefik/Let's Encrypt TLS.
+- `provision-customer.sh` onboarding, `RUNBOOK.md`, CI, docs, auto-sync workflow.
+
+[Unreleased]: https://github.com/EditorialOS/The-Gate-VPS/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/EditorialOS/The-Gate-VPS/releases/tag/v1.1.0
 [1.0.0]: https://github.com/EditorialOS/The-Gate-VPS/releases/tag/v1.0.0
