@@ -1,6 +1,6 @@
 {
   "name": "the-gate-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "zod": "^3.23.8",
     "yaml": "^2.5.1"
   },
-  "description": "Multi-tenant MCP server wrapping The Gate editorial QC API over HTTPS.",
+  "description": "The Gate — AI content evaluation (evals) framework exposed as multi-tenant MCP agent tools over HTTPS.",
   "repository": {
     "type": "git",
     "url": "https://github.com/EditorialOS/The-Gate-VPS.git"
