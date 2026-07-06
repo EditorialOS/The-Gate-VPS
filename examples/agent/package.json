@@ -1,0 +1,13 @@
+{
+  "name": "the-gate-demo-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Autonomous draft→evaluate→revise agent using The Gate via MCP.",
+  "scripts": {
+    "start": "node agent.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
