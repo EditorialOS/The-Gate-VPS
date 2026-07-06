@@ -5,12 +5,23 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "check": "node --check server.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "express": "^4.21.2",
     "zod": "^3.23.8",
     "yaml": "^2.5.1"
+  },
+  "description": "Multi-tenant MCP server wrapping The Gate editorial QC API over HTTPS.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EditorialOS/The-Gate-VPS.git"
+  },
+  "license": "UNLICENSED",
+  "author": "EditorialOS",
+  "engines": {
+    "node": ">=22"
   }
 }
