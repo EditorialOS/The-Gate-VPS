@@ -60,16 +60,41 @@ See [`EVALS.md`](./EVALS.md) for the scoring model.
 | **Transport** | MCP Streamable-HTTP (stateless, multi-tenant) |
 | **TLS** | Let's Encrypt (auto-issued via Traefik) |
 
-## Quick start (run the agent against the live gate)
+## Quick start
 
-```bash
-cd examples/agent
-npm install
-export GATE_MCP_URL="https://the-gate-mcp.example.com/mcp"
-export GATE_API_KEY="gate_sk_xxxxxxxx_..."   # your key
-node agent.mjs
-```
+  ### Run it locally
 
+  ```bash
+  git clone https://github.com/EditorialOS/The-Gate-VPS.git
+  cd The-Gate-VPS
+  cp .env.example .env
+  # Edit .env: set GATE_API_BASE_URL to your running Gate API instance
+  docker compose up -d
+  ```
+
+  Then run the agent against the local instance (MCP server maps to port 8082):
+
+  ```bash
+  cd examples/agent
+  npm install
+  export GATE_MCP_URL="http://localhost:8082/mcp"
+  export GATE_API_KEY="your_key"
+  node agent.mjs
+  ```
+
+  ### Hosted access
+
+  ```bash
+  cd examples/agent
+  npm install
+  export GATE_MCP_URL="https://the-gate-mcp.example.com/mcp"
+  export GATE_API_KEY="gate_sk_xxxxxxxx_..."   # your key
+  node agent.mjs
+  ```
+
+  Hosted keys are provisioned per customer — request access: editorial.operating.system@gmail.com
+
+  
 ## Run the eval harness
 
 ```bash
