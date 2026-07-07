@@ -10,7 +10,7 @@ if [ -z "$NAME" ]; then echo "Usage: $0 \"Customer Name\""; exit 1; fi
 API_CONTAINER="the-gate"
 SECRET_VAR="GATE_ADMIN_SECRET"
 API_BASE="http://localhost:8081/api"          # host-side mapping of the API
-MCP_URL="https://the-gate-mcp.example.com/mcp"
+MCP_URL="https://the-gate-mcp.srv1461270.hstgr.cloud/mcp"
 
 # Read admin secret at runtime from the API container env — never printed.
 ADMIN_SECRET="$(docker exec "$API_CONTAINER" printenv "$SECRET_VAR")"
