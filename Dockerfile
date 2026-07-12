@@ -1,7 +1,1 @@
-FROM node:22-alpine
-WORKDIR /app
-COPY package.json ./
-RUN npm install --omit=dev
-COPY server.js openapi.yaml ./
-EXPOSE 3000
-CMD ["node","server.js"]
+RlJPTSBub2RlOjIyLWFscGluZQpXT1JLRElSIC9hcHAKQ09QWSBwYWNrYWdlLmpzb24gLi8KUlVOIG5wbSBpbnN0YWxsIC0tb21pdD1kZXYKQ09QWSBzZXJ2ZXIuanMgb3BlbmFwaS55YW1sIC4vCkVYUE9TRSAzMDAwCkNNRCBbIm5vZGUiLCJzZXJ2ZXIuanMiXQo=
