@@ -1,16 +1,1 @@
-{
-  "name": "the-gate-mcp",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.0",
-    "express": "^4.21.2",
-    "zod": "^3.23.8",
-    "yaml": "^2.5.1"
-  }
-}
+ewogICJuYW1lIjogInRoZS1nYXRlLW1jcCIsCiAgInZlcnNpb24iOiAiMS4wLjAiLAogICJwcml2YXRlIjogdHJ1ZSwKICAidHlwZSI6ICJtb2R1bGUiLAogICJtYWluIjogInNlcnZlci5qcyIsCiAgInNjcmlwdHMiOiB7CiAgICAic3RhcnQiOiAibm9kZSBzZXJ2ZXIuanMiCiAgfSwKICAiZGVwZW5kZW5jaWVzIjogewogICAgIkBtb2RlbGNvbnRleHRwcm90b2NvbC9zZGsiOiAiXjEuMTIuMCIsCiAgICAiZXhwcmVzcyI6ICJeNC4yMS4yIiwKICAgICJ6b2QiOiAiXjMuMjMuOCIsCiAgICAieWFtbCI6ICJeMi41LjEiCiAgfQp9
